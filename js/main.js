@@ -16,13 +16,13 @@ const TYPES = [
   'flat',
   'house',
   'bungalow'
-]
+];
 
 const PHOTOS = [
   'http://o0.github.io/assets/images/tokyo/hotel1.jpg',
   'http://o0.github.io/assets/images/tokyo/hotel2.jpg',
   'http://o0.github.io/assets/images/tokyo/hotel3.jpg'
-]
+];
 
 const TITLES = ['Продам будку', 'Сниму гараж', 'Арендую студию'];
 
@@ -57,7 +57,7 @@ function getNumber(min, max) { //получить случайное полож�
   }
 }
 
-function getCoordinates(min, max, digits) { //получить случайное положительное число в заданном диапазон с плавающей точкой
+function getCoordinates(min, max, digits) { //получить случайное положительное число в заданном диапазоне с плавающей точкой
 
   if (checkIfCorrect(min, max) === true) {
 
@@ -68,7 +68,7 @@ function getCoordinates(min, max, digits) { //получить случайно�
 }
 
 function getArray(array) { //получить новый массив случайной длины
-  return array.slice(getNumber(1, array.length));
+  return array.slice(getNumber(0, array.length - 1));
 }
 
 function Author() {
@@ -94,7 +94,7 @@ function Offer(x, y) {
   this.photos = getArray(PHOTOS);
 }
 
-let offersArray = new Array(SIMILIAR_OFFERS_COUNT).fill({}).map(() => { //генерация массива объектов
+const getOffersArray = new Array(SIMILIAR_OFFERS_COUNT).fill({}).map(() => { //генерация массива объектов
 
   const point = new Point();
 
@@ -106,4 +106,4 @@ let offersArray = new Array(SIMILIAR_OFFERS_COUNT).fill({}).map(() => { //ген
 
 });
 
-console.log(offersArray);
+console.log(getOffersArray);
