@@ -1,6 +1,5 @@
 'use strict'
 
-export {TIME, FEATURES, TYPES, PHOTOS, TITLES, DESCRIPTIONS, SIMILIAR_OFFERS_COUNT};
 export {Author, Point, Offer, getOffersArray};
 import {checkIfCorrect, getNumber, getCoordinates, getArray} from './util.js';
 
