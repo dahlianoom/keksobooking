@@ -1,7 +1,8 @@
-'use strict'
-
-export {Author, Point, Offer, getOffersArray};
-import {checkIfCorrect, getNumber, getCoordinates, getArray} from './util.js';
+import {
+  getNumber,
+  getCoordinates,
+  getArray
+} from './util.js';
 
 const TIME = ['12:00', '13:00', '14:00'];
 
@@ -34,38 +35,39 @@ const DESCRIPTIONS = ['описание 1', 'описание 2', 'описан�
 const SIMILIAR_OFFERS_COUNT = 10;
 
 function Author() {
-    this.avatar = `img/avatars/user0${getNumber(1,8)}.png`;
-  }
-  
-  function Point() {
-    this.x = getCoordinates(35.65, 35.7, 5);
-    this.y = getCoordinates(139.7, 139.8, 5);
-  }
-  
-  function Offer(x, y) {
-    this.title = TITLES[getNumber(0, TITLES.length - 1)];
-    this.address = `${x}, ${y}`;
-    this.price = getNumber(1000, 2000);
-    this.type = TYPES[getNumber(0, TYPES.length - 1)];
-    this.rooms = getNumber(1, 5);
-    this.guests = getNumber(1, 10);
-    this.checkin = TIME[getNumber(0, TIME.length - 1)];
-    this.checkout = TIME[getNumber(0, TIME.length - 1)];
-    this.features = getArray(FEATURES);
-    this.description = DESCRIPTIONS[getNumber(0, DESCRIPTIONS.length - 1)];
-    this.photos = getArray(PHOTOS);
-  }
-  
-  const getOffersArray = new Array(SIMILIAR_OFFERS_COUNT).fill({}).map(() => { //генерация массива объектов
-  
+  this.avatar = `img/avatars/user0${getNumber(1,8)}.png`;
+}
+
+function Point() {
+  this.x = getCoordinates(35.65, 35.7, 5);
+  this.y = getCoordinates(139.7, 139.8, 5);
+}
+
+function Offer(x, y) {
+  this.title = TITLES[getNumber(0, TITLES.length - 1)];
+  this.address = `${x}, ${y}`;
+  this.price = getNumber(1000, 2000);
+  this.type = TYPES[getNumber(0, TYPES.length - 1)];
+  this.rooms = getNumber(1, 5);
+  this.guests = getNumber(1, 10);
+  this.checkin = TIME[getNumber(0, TIME.length - 1)];
+  this.checkout = TIME[getNumber(0, TIME.length - 1)];
+  this.features = getArray(FEATURES);
+  this.description = DESCRIPTIONS[getNumber(0, DESCRIPTIONS.length - 1)];
+  this.photos = getArray(PHOTOS);
+}
+
+export function getOffersArray() {
+
+  return new Array(SIMILIAR_OFFERS_COUNT).fill({}).map(() => { //генерация массива объектов
+
     const point = new Point();
-  
+
     return {
       author: new Author(),
       point,
       offer: new Offer(point.x, point.y)
     }
-  
-  });
 
-  console.log(getOffersArray);
+  });
+}
