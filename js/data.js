@@ -32,7 +32,7 @@ const TITLES = ['Продам будку', 'Сниму гараж', 'Аренд�
 
 const DESCRIPTIONS = ['описание 1', 'описание 2', 'описание 3'];
 
-const SIMILIAR_OFFERS_COUNT = 10;
+const SIMILAR_OFFERS_COUNT = 10;
 
 function Author() {
   this.avatar = `img/avatars/user0${getNumber(1,8)}.png`;
@@ -59,7 +59,7 @@ function Offer(x, y) {
 
 export function getOffersArray() {
 
-  return new Array(SIMILIAR_OFFERS_COUNT).fill({}).map(() => { //генерация массива объектов
+  return new Array(SIMILAR_OFFERS_COUNT).fill({}).map(() => {
 
     const point = new Point();
 

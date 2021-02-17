@@ -1,4 +1,4 @@
-export function checkIfCorrect(min, max) { //проверка ввода
+export function checkIfCorrect(min, max) {
   min = +min;
   max = +max;
 
@@ -15,7 +15,7 @@ export function checkIfCorrect(min, max) { //проверка ввода
   return true;
 }
 
-export function getNumber(min, max) { //получить случайное положительное число в заданном диапазоне
+export function getNumber(min, max) {
 
   if (checkIfCorrect(min, max) === true) {
     min = Math.ceil(min);
@@ -25,7 +25,7 @@ export function getNumber(min, max) { //получить случайное по
   }
 }
 
-export function getCoordinates(min, max, digits) { //получить случайное положительное число в заданном диапазоне с плавающей точкой
+export function getCoordinates(min, max, digits) {
 
   if (checkIfCorrect(min, max) === true) {
 
@@ -35,6 +35,6 @@ export function getCoordinates(min, max, digits) { //получить случа
   }
 }
 
-export function getArray(array) { //получить новый массив случайной длины
+export function getArray(array) { 
   return array.slice(getNumber(0, array.length - 1));
 }
