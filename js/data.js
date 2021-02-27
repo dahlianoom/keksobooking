@@ -1,7 +1,8 @@
 import {
   getNumber,
   getCoordinates,
-  getArray
+  getArray,
+  checkCapacity
 } from './util.js';
 
 const TIME = ['12:00', '13:00', '14:00'];
@@ -50,8 +51,10 @@ function Offer(x, y) {
   this.type = TYPES[getNumber(0, TYPES.length - 1)];
   this.rooms = getNumber(1, 5);
   this.guests = getNumber(1, 10);
+  this.capacity = checkCapacity(this.guests, this.rooms) ;
   this.checkin = TIME[getNumber(0, TIME.length - 1)];
   this.checkout = TIME[getNumber(0, TIME.length - 1)];
+  this.time = `Заезд после ${this.checkin}, выезд после ${this.checkout}`;
   this.features = getArray(FEATURES);
   this.description = DESCRIPTIONS[getNumber(0, DESCRIPTIONS.length - 1)];
   this.photos = getArray(PHOTOS);

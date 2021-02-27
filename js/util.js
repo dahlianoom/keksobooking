@@ -38,3 +38,21 @@ export function getCoordinates(min, max, digits) {
 export function getArray(array) { 
   return array.slice(getNumber(0, array.length - 1));
 }
+
+export function checkCapacity(guests, rooms) {
+  let str = '';
+
+  if (rooms === 1) {
+    str = `${rooms} комната для `;
+  } else if (rooms > 1 && rooms < 5) {
+    str = `${rooms} комнаты для `;
+  } else {
+    str = `${rooms} комнат для `;
+  }
+
+  if (guests === 1) {
+    return str + `${guests} гостя`;
+  } else {
+    return str + `${guests} гостей`;
+  }
+}
