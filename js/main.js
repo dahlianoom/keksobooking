@@ -1,1 +1,1 @@
-import './create-offers-template.js';
+import './create-cards.js';
