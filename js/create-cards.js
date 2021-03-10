@@ -1,16 +1,10 @@
 import {
-  getOffersArray
+  getOffersArray,
+  HOUSE_TYPES
 } from './data.js';
 import {
   getNumber
-} from './util.js'
-
-const HOUSE_TYPES = {
-  palace: 'Дворец',
-  house: 'Дом',
-  flat: 'Квартира',
-  bungalow: 'Бунгало',
-};
+} from './util.js';
 
 const fields = [
   'x',
@@ -103,4 +97,5 @@ function renderPhotos(photos, photosNode) {
   });
 }
 
-createCards(currentOffer);
+// createCards(currentOffer);
+export { similarOffers };

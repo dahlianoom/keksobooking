@@ -1,15 +1,9 @@
-const MIN_PRICE = {
-  palace: 15000,
-  house: 10000,
-  flat: 5000,
-  bungalow: 1000,
-};
+import {MIN_PRICE} from './data.js';
 
 const typeSelect = document.querySelector('#type');
 const priceInput = document.querySelector('#price');
 const timeinSelect = document.querySelector('#timein');
 const timeoutSelect = document.querySelector('#timeout');
-const form = document.querySelector('.ad-form');
 
 typeSelect.addEventListener('change', (evt) => {
 

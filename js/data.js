@@ -7,6 +7,20 @@ import {
 
 const TIME = ['12:00', '13:00', '14:00'];
 
+const MIN_PRICE = {
+  palace: 10000,
+  house: 5000,
+  flat: 1000,
+  bungalow: 0,
+};
+
+const HOUSE_TYPES = {
+  palace: 'Дворец',
+  house: 'Дом',
+  flat: 'Квартира',
+  bungalow: 'Бунгало',
+};
+
 const FEATURES = [
   'wifi',
   'dishwasher',
@@ -74,3 +88,5 @@ export function getOffersArray() {
 
   });
 }
+
+export {MIN_PRICE, HOUSE_TYPES};
